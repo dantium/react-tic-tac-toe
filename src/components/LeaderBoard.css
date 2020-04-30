@@ -3,3 +3,8 @@
   margin: 0 auto;
   
 }
+
+.LeaderBoard .Results {
+  max-height: 200px;
+  overflow-y: auto;
+}

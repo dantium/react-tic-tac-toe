@@ -32,6 +32,7 @@ export default function Start({ show, startGame }) {
         />
         <input
             type="number"
+            min="15"
             value={gridNum} 
             onChange={e => setGridNum(e.target.value)}
         />
