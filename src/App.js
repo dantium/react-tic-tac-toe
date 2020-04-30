@@ -30,25 +30,27 @@ function App() {
   };
 
   const setTile = (row, col) => {
-    // Update the grid field with a 1 or 2 depending on which player clicks
-    console.log("set tile");
-    grid[row][col] = player1Next ? 1 : 2;
-    setGrid([...grid]);
-    // check if win or draw and update game state
-    const winner = checkWinner();
-    let gridFull = grid.filter((a) => a.includes(0)).length === 0;
-    let message = "";
-    if (winner) {
-      message = `${player1Next ? player1 : player2} won`;
-      console.log("winner");
-    } else if (gridFull) {
-      message = `Draw`;
-    }
-    if (winner || gridFull) {
-      setGameState(GAMESTATE.finshed);
-      setFinshMessage(message);
-    } else {
-      setplayer1Next(!player1Next);
+    if (gameState === GAMESTATE.started) {
+      // Update the grid field with a 1 or 2 depending on which player clicks
+      console.log("set tile");
+      grid[row][col] = player1Next ? 1 : 2;
+      setGrid([...grid]);
+      // check if win or draw and update game state
+      const winner = checkWinner();
+      let gridFull = grid.filter((a) => a.includes(0)).length === 0;
+      let message = "";
+      if (winner) {
+        message = `${player1Next ? player1 : player2} won`;
+        console.log("winner");
+      } else if (gridFull) {
+        message = `Draw`;
+      }
+      if (winner || gridFull) {
+        setGameState(GAMESTATE.finshed);
+        setFinshMessage(message);
+      } else {
+        setplayer1Next(!player1Next);
+      }
     }
   };
 
