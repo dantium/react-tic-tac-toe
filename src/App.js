@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { GAMESTATE } from "./constants";
 
+import Header from "./components/Header";
 import Start from "./components/Start";
 import Board from "./components/Board";
 import Finsh from "./components/Finsh";
@@ -107,7 +108,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Tic Tac Toe</h1>
+      <Header/>
       <Start startGame={startGame} show={gameState === GAMESTATE.waiting} />
       <Board
         grid={grid}

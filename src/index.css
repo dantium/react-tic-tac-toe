@@ -6,3 +6,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+head, body {
+  height: 100vh;
+  margin: 0;
+}
+
+#root, .App {
+  height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
