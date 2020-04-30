@@ -8,12 +8,15 @@ function App() {
   const [player1, setplayer1] = useState("");
   const [player2, setplayer2] = useState("");
   const [gameState, setGameState] = useState(GAMESTATE.waiting);
+  const [grid, setGrid] = useState([]);
 
   const startGame = (player1Name, player2Name) => {
     console.log('start game');
+    const gridNum = 15
     setplayer1(player1Name);
     setplayer2(player2Name);
     setGameState(GAMESTATE.started);
+    setGrid(Array(gridNum).fill(0).map(a => Array(gridNum).fill(0)));
   }
 
   return (
