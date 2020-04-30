@@ -10,10 +10,10 @@ export default function Board({ player1, player2, grid, clickTile, show, gameNum
   }
 
   return (
-    <div>
+    <div className="Board">
       <BoardHeader player1={player1} player2={player2} gameNum={gameNum} />
 
-      <div className="Board">
+      <div className="Grid">
         {grid.map((rowArray, index) => (
           <Row
             key={index}
