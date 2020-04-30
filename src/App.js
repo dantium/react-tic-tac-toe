@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 import { GAMESTATE } from './constants';
 
-import Start from "./components/Start";
+import Start from './components/Start';
+import Board from './components/Board';
 
 function App() {
   const [player1, setplayer1] = useState("");
@@ -23,6 +24,7 @@ function App() {
     <div className="App">
       <h1>Tic Tac Toe</h1>
       <Start startGame={startGame} show={gameState === GAMESTATE.waiting} />
+      <Board grid={grid} player1={player1} player2={player2} />
     </div>
   );
 }
