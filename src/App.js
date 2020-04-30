@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Start from "./components/Start";
 import Board from "./components/Board";
 import Finsh from "./components/Finsh";
+import LeaderBoard from "./components/LeaderBoard";
 
 function App() {
   const [player1, setplayer1] = useState("");
@@ -124,6 +125,7 @@ function App() {
         show={gameState === GAMESTATE.finshed}
         playAgain={playAgain}
         finshMessage={finshMessage}
+        leaderBoard={<LeaderBoard gameResults={gameResults} />}
       />
     </div>
   );
