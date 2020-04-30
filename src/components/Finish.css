@@ -1,5 +1,5 @@
 .Finish {
-  position: sticky;
+  position: absolute;
   width: 100%;
   right: 0;
   left: 0;
@@ -10,7 +10,6 @@
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  padding-top: 60px;
 }
 
 .Finish .Result {
@@ -22,7 +21,7 @@
   animation: pulse 1s infinite;
   flex-shrink: 1;
   padding: 0px 20px;
-  margin: 0 auto 30px;;
+  margin: 0 auto 50px;;
 }
 
 .Finish .Button {

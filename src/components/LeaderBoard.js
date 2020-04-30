@@ -1,8 +1,10 @@
 import React from "react";
 
+import "./LeaderBoard.css";
+
 export default function LeaderBoard({ gameResults }) {
   return (
-    <div>
+    <div className="LeaderBoard">
       <h1>Leaderboard</h1>
       {gameResults.map((result, index) => (
         <div key={index} className="">
