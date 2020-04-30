@@ -118,6 +118,7 @@ function App() {
         player2={player2}
         clickTile={setTile}
         show={gameState !== GAMESTATE.waiting}
+        gameNum={gameState === GAMESTATE.finshed ? gameResults.length : gameResults.length+1}
       />
       <Finsh
         show={gameState === GAMESTATE.finshed}
