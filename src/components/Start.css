@@ -1,0 +1,19 @@
+.Start {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+.Start form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.Start form input {
+  font-size: 40px;
+  font-family: 'Permanent Marker', cursive;
+  margin-bottom: 20px;
+}
