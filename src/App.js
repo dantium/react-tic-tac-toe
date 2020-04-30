@@ -4,6 +4,7 @@ import { GAMESTATE } from "./constants";
 
 import Start from "./components/Start";
 import Board from "./components/Board";
+import Finsh from "./components/Finsh";
 
 function App() {
   const [player1, setplayer1] = useState("");
@@ -11,7 +12,7 @@ function App() {
   const [gameState, setGameState] = useState(GAMESTATE.waiting);
   const [grid, setGrid] = useState([]);
   const [player1Next, setplayer1Next] = useState(true);
-  const [finshMessage, setFinshMessage] = useState('');
+  const [finshMessage, setFinshMessage] = useState("");
 
   const startGame = (player1Name, player2Name) => {
     console.log("start game");
@@ -25,7 +26,7 @@ function App() {
         .map((a) => Array(gridNum).fill(0))
     );
     setplayer1Next(true);
-    setFinshMessage('');
+    setFinshMessage("");
   };
 
   const setTile = (row, col) => {
@@ -33,14 +34,14 @@ function App() {
     console.log("set tile");
     grid[row][col] = player1Next ? 1 : 2;
     setGrid([...grid]);
-     // check if win or draw and update game state
+    // check if win or draw and update game state
     const winner = checkWinner();
-    let gridFull = grid.filter(a => a.includes(0)).length === 0;
-    let message = ''
+    let gridFull = grid.filter((a) => a.includes(0)).length === 0;
+    let message = "";
     if (winner) {
       message = `${player1Next ? player1 : player2} won`;
-      console.log('winner');
-    } else if ( gridFull ) {
+      console.log("winner");
+    } else if (gridFull) {
       message = `Draw`;
     }
     if (winner || gridFull) {
@@ -49,7 +50,6 @@ function App() {
     } else {
       setplayer1Next(!player1Next);
     }
-
   };
 
   const checkWinner = (match = 5) => {
@@ -98,6 +98,10 @@ function App() {
     }
   };
 
+  const playAgain = () => {
+    // Restart the game
+  };
+
   return (
     <div className="App">
       <h1>Tic Tac Toe</h1>
@@ -108,6 +112,11 @@ function App() {
         player2={player2}
         clickTile={setTile}
         show={gameState !== GAMESTATE.waiting}
+      />
+      <Finsh
+        show={gameState === GAMESTATE.finshed}
+        playAgain={playAgain}
+        finshMessage={finshMessage}
       />
     </div>
   );
