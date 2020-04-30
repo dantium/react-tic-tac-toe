@@ -14,6 +14,7 @@ function App() {
   const [grid, setGrid] = useState([]);
   const [player1Next, setplayer1Next] = useState(true);
   const [finshMessage, setFinshMessage] = useState("");
+  const [gameResults, setGameResults] = useState([]);
 
   const startGame = (player1Name, player2Name, gridNum) => {
     console.log("start game");
@@ -47,6 +48,7 @@ function App() {
       }
       if (winner || gridFull) {
         setGameState(GAMESTATE.finshed);
+        setGameResults(oldResults => [...oldResults, message])
         setFinshMessage(message);
       } else {
         setplayer1Next(!player1Next);
