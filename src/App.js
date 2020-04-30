@@ -44,6 +44,7 @@ function App() {
         player1={player1}
         player2={player2}
         clickTile={setTile}
+        show={gameState !== GAMESTATE.waiting}
       />
     </div>
   );
