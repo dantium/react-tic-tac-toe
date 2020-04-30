@@ -5,7 +5,7 @@ import { GAMESTATE } from "./constants";
 import Header from "./components/Header";
 import Start from "./components/Start";
 import Board from "./components/Board";
-import Finsh from "./components/Finsh";
+import Finish from "./components/Finish";
 import LeaderBoard from "./components/LeaderBoard";
 
 function App() {
@@ -121,7 +121,7 @@ function App() {
         show={gameState !== GAMESTATE.waiting}
         gameNum={gameState === GAMESTATE.finshed ? gameResults.length : gameResults.length+1}
       />
-      <Finsh
+      <Finish
         show={gameState === GAMESTATE.finshed}
         playAgain={playAgain}
         finshMessage={finshMessage}
