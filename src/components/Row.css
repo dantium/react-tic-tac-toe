@@ -1,0 +1,9 @@
+.Row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.Row:not(:last-child) {
+  border-bottom: 1px solid #000;
+}

@@ -1,0 +1,5 @@
+.Board {
+  display: flex;
+  /* border: 2px solid red; */
+  flex-direction: column;
+}

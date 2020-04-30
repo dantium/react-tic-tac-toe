@@ -1,12 +1,13 @@
 import React from "react";
 
 import Row from "./Row";
+import "./Board.css";
 
-export default function Board({ player1, player2, grid }) {
+export default function Board({ player1, player2, grid, clickTile }) {
   return (
-    <div>
+    <div className="Board">
       {grid.map((rowArray, index) => (
-        <Row row={rowArray} rindex={index} />
+        <Row key={index} row={rowArray} rindex={index} clickTile={clickTile} />
       ))}
     </div>
   );

@@ -1,0 +1,8 @@
+.Tile {
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.Tile:not(:last-child) {
+  border-right: 1px solid #000;
+}
