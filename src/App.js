@@ -102,6 +102,8 @@ function App() {
 
   const playAgain = () => {
     // Restart the game
+    setplayer1Next(true);
+    setGameState(GAMESTATE.waiting);
   };
 
   return (
