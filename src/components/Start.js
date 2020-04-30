@@ -1,5 +1,6 @@
 import React, { useState} from 'react'
 
+import Button from './Button';
 import './Start.css';
 
 
@@ -21,7 +22,7 @@ export default function Start() {
           value={player2}
           onChange={e => setPlayer2(e.target.value)}
       />
-      <button>Start Game!</button>
+      <Button title="Start Game!"/>
       </form>
     </div>
   )
