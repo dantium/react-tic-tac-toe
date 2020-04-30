@@ -14,9 +14,8 @@ function App() {
   const [player1Next, setplayer1Next] = useState(true);
   const [finshMessage, setFinshMessage] = useState("");
 
-  const startGame = (player1Name, player2Name) => {
+  const startGame = (player1Name, player2Name, gridNum) => {
     console.log("start game");
-    const gridNum = 15;
     setplayer1(player1Name);
     setplayer2(player2Name);
     setGameState(GAMESTATE.started);
